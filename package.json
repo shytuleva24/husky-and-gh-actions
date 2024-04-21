@@ -4,11 +4,15 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "lint": "ng lint",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:husky-and-gh-actions": "node dist/husky-and-gh-actions/server/server.mjs",
-    "prepare": "husky"
+    "prepare": "husky",
+    "stylelint": "npx stylelint \"src/**/*.scss\"",
+    "precommit": "lint-staged",
+    "deploy": "ng deploy --base-href=/husky-and-gh-actions/ --name=shytuleva24 --email=shytuleva@gmail.com --no-silent"
   },
   "private": true,
   "dependencies": {
